@@ -3,6 +3,7 @@ package com.atosnasmartphone.product_service.service;
 import com.atosnasmartphone.product_service.dto.request.ProductDeleteRequestDto;
 import com.atosnasmartphone.product_service.dto.request.ProductCreateRequestDto;
 import com.atosnasmartphone.product_service.dto.request.ProductUpdateRequestDto;
+import com.atosnasmartphone.product_service.dto.response.ImportResultResponse;
 import com.atosnasmartphone.product_service.dto.response.ProductResponse;
 import com.atosnasmartphone.product_service.entity.ProductEntity;
 
@@ -17,4 +18,7 @@ public interface ProductService {
 
     void delete(Long id);
 
+
+    // Import  dari scheduler-service
+    ImportResultResponse importProducts(List<ProductCreateRequestDto> items);
 }
