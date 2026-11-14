@@ -2,7 +2,7 @@ package com.atosnasmartphone.product_service.controller;
 
 
 import com.atosnasmartphone.product_service.dto.request.ProductDeleteRequestDto;
-import com.atosnasmartphone.product_service.dto.request.ProductRequestDto;
+import com.atosnasmartphone.product_service.dto.request.ProductCreateRequestDto;
 import com.atosnasmartphone.product_service.dto.request.ProductUpdateRequestDto;
 import com.atosnasmartphone.product_service.dto.response.BaseResponse;
 import com.atosnasmartphone.product_service.entity.ProductEntity;
@@ -20,7 +20,7 @@ public class ProductController {
     private final ProductService productService;
 
     @PostMapping("/create")
-    public BaseResponse<ProductEntity> create(@RequestBody ProductRequestDto request) {
+    public BaseResponse<ProductEntity> create(@RequestBody ProductCreateRequestDto request) {
         return BaseResponse.ok(productService.create(request));
     }
 

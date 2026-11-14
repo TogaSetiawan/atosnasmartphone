@@ -1,17 +1,15 @@
 package com.atosnasmartphone.product_service.dto.request;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
 
 @Data
-public class ProductUpdateRequestDto {
+@EqualsAndHashCode(callSuper = true)
+public class ProductUpdateRequestDto extends ProductCreateRequestDto{
+
+    @NotNull(message = "id wajib diisi")
     private Long id;
-    private String titleProduct;
-    private String brandProduct;
-    private String skuProduct;
-    private String descProduct;
-    private Integer stock;
-    private BigDecimal price;
-    private Double rating;
 }

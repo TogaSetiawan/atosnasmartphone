@@ -1,14 +1,13 @@
 package com.atosnasmartphone.product_service.service.impl;
 
 import com.atosnasmartphone.product_service.dto.request.ProductDeleteRequestDto;
-import com.atosnasmartphone.product_service.dto.request.ProductRequestDto;
+import com.atosnasmartphone.product_service.dto.request.ProductCreateRequestDto;
 import com.atosnasmartphone.product_service.dto.request.ProductUpdateRequestDto;
 import com.atosnasmartphone.product_service.entity.ProductEntity;
 import com.atosnasmartphone.product_service.exception.DuplicateProductException;
 import com.atosnasmartphone.product_service.exception.ProductNotFoundException;
 import com.atosnasmartphone.product_service.repository.ProductRepository;
 import com.atosnasmartphone.product_service.service.ProductService;
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +22,7 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
-    public ProductEntity create(ProductRequestDto request) {
+    public ProductEntity create(ProductCreateRequestDto request) {
         productRepository.findBySkuProduct(request.getSkuProduct()).ifPresent(p -> {
             throw new DuplicateProductException("SKU ini sudah ada: " + request.getSkuProduct());
         });

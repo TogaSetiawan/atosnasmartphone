@@ -1,14 +1,14 @@
 package com.atosnasmartphone.product_service.service;
 
 import com.atosnasmartphone.product_service.dto.request.ProductDeleteRequestDto;
-import com.atosnasmartphone.product_service.dto.request.ProductRequestDto;
+import com.atosnasmartphone.product_service.dto.request.ProductCreateRequestDto;
 import com.atosnasmartphone.product_service.dto.request.ProductUpdateRequestDto;
 import com.atosnasmartphone.product_service.entity.ProductEntity;
 
 import java.util.List;
 
 public interface ProductService {
-    ProductEntity create(ProductRequestDto request);
+    ProductEntity create(ProductCreateRequestDto request);
 
     ProductEntity edit(ProductUpdateRequestDto request);
 
