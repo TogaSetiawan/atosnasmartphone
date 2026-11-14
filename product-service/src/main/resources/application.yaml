@@ -26,3 +26,7 @@ server:
   port: 8082
   servlet:
     context-path: /product
+
+internal:
+  api-key: ${INTERNAL_API_KEY:3c273630a4dd0c244eaa030764baf3584ca13479a6c90fe614256915324bb394}
+

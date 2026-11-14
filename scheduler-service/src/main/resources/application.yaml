@@ -1,3 +1,34 @@
 spring:
   application:
     name: scheduler-service
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connect-timeout: 3000
+            read-timeout: 10000
+
+server:
+  port: 8083
+  servlet:
+    context-path: /scheduler
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+dummyjson:
+  base-url: https://dummyjson.com
+  category: smartphones
+
+scheduler:
+  import:
+    # jeda antar putaran impor (ms). 120000 = 2 menit
+    interval-ms: 120000
+
+internal:
+  api-key: ${INTERNAL_API_KEY:3c273630a4dd0c244eaa030764baf3584ca13479a6c90fe614256915324bb394}
+
