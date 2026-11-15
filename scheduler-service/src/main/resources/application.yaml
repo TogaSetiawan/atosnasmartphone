@@ -26,7 +26,6 @@ dummyjson:
 
 scheduler:
   import:
-    # jeda antar putaran impor (ms). 120000 = 2 menit
     interval-ms: 120000
 
 internal:

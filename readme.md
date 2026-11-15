@@ -47,5 +47,5 @@ PostgreSQL :5432
 1. Port gateway pakai 8085 karena 8080 sudah dipakai dan tidak bisa ditaskkill
 2. JWT Token expired dalam 300000 miliseconds alias 5 menit. Durasi 5–15 menit adalah standar industri yang paling disarankan untuk meminimalkan risiko jika token dicuri. 
 3. Pada scheduler, Produk yang sudah pernah diimpor tidak tersimpan dua kali walaupun impor jalan berulang, karena ada penjagaan duplikat by SKU.
-4. Feign timeout 3 detik connect ke tujuan, 10 detik read response. Standar rekomendasi connect-timeout = 1-3 detik, read-timeout crud = 5-10 detaik
-5. Pada scheduler jika ambil dari DummyJSON nya gagal maka tidak panggil product-service sama sekali
+4. Feign timeout 3 detik connect ke tujuan, 10 detik read response. Standar rekomendasi connect-timeout = 1-3 detik, read-timeout crud = 5-10 detik
+5. Pada scheduler jika ambil dari DummyJSON nya gagal maka tidak panggil product-service sama sekali, tapi 
