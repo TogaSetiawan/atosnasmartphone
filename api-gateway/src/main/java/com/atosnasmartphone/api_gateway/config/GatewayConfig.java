@@ -15,7 +15,7 @@ public class GatewayConfig {
                         .path("/product/**")
                         .uri("lb://product-service"))
                 .route("scheduler-route", r -> r
-                        .path("/quote/**")
+                        .path("/scheduler/**")
                         .filters(f -> f.addRequestHeader("X-Source", "gateway"))
                         .uri("lb://scheduler-service"))
                 .route("auth-route", r -> r
