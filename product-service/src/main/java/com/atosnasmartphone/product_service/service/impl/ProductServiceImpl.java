@@ -159,6 +159,8 @@ public class ProductServiceImpl implements ProductService {
             return;
         }
 
+
+
         ProductEntity entity = new ProductEntity();
         applyFieldsProduct(entity, item);
         entity.setCreatedDt(LocalDateTime.now());
